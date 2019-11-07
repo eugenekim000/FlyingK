@@ -6,6 +6,7 @@
   "author": "Felix Kirmse for Code Chrysalis",
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^8.2.0",
     "express": "^4.16.3",
     "knex": "^0.14.6",
     "morgan": "^1.9.0",
@@ -30,7 +31,8 @@
     "migrate": "knex migrate:latest --knexfile models/knexfile.js",
     "rollback": "knex migrate:rollback --knexfile models/knexfile.js",
     "db-s": "heroku pg:psql --app ccx-react-b-project-staging",
-    "heroku-postbuild": "node server"
+    "heroku-postbuild": "node server",
+    "heroku:config": "heroku config --app ccx-react-b-project-staging"
   },
   "devDependencies": {
     "chai": "^4.1.2",

@@ -9,6 +9,19 @@ export async function getMarkers() {
     },
     key: l.name,
     defaultAnimation: 2,
+    data: {
+      id: l.id,
+      name: l.name,
+      state: l.state,
+      city: l.city,
+      highway: l.highway,
+      locationType: l.locationType,
+      truckServices: l.truckServices,
+      amenities: l.amenities,
+      selectAmenities: l.selectAmenities,
+      restaurants: l.restaurants,
+      fuelPrices: l.fuelPrices,
+    },
   }));
   return markers;
 }

@@ -10,11 +10,7 @@ const MyMap = withGoogleMap((props) => (
     onClick={props.onMapClick}
   >
     {props.markers.map((marker) => (
-      <Marker
-        key={marker.key}
-        {...marker}
-        onRightClick={() => props.onMarkerRightClick(marker)}
-      />
+      <Marker key={marker.key} {...marker} onClick={console.log(marker.data)} />
     ))}
   </GoogleMap>
 ));
@@ -22,7 +18,7 @@ const MyMap = withGoogleMap((props) => (
 class Map extends Component {
   async componentDidMount() {
     if (this.props.locations.length <= 0) {
-      // this.props.getLocations();
+      this.props.getLocations();
     }
   }
 
@@ -37,7 +33,9 @@ class Map extends Component {
         onMapLoad={() => {}}
         onMapClick={() => {}}
         markers={this.props.locations}
-        onMarkerRightClick={() => {}}
+        onMarkerRightClick={(marker) => {
+          console.log(marker.data);
+        }}
       />
     );
   }
