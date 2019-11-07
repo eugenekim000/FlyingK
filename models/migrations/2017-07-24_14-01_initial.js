@@ -17,7 +17,7 @@ exports.up = function(knex) {
       table.text("fuelPrices");
     })
     .then(() => {
-      console.log("Seeded!");
+      console.log("'locations' table created!");
     });
 };
 exports.down = function(knex, Promise) {

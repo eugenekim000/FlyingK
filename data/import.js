@@ -1,5 +1,4 @@
-const fs = require("fs");
-const db = require("../server/knex.js");
+const db = require("../server/knex");
 const truckStopData = require("../truckStopData");
 
 console.log("Seeding data...");
@@ -35,7 +34,6 @@ console.log("Seeding data...");
         restaurants,
         fuelPrices,
       });
-      console.log("Data seeded!", result);
     }
   } catch (err) {
     console.error("Error inserting records", err);

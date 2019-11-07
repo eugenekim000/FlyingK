@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const path = require("path");
 const config = require("../config");
 const db = require("knex")(config.db);
-
 const app = express();
 
 // Setup logger

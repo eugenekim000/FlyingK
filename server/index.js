@@ -6,9 +6,18 @@ const PORT = process.env.PORT || 9000;
 (async () => {
   try {
     console.log("Running migrations...");
-    await db.migrate.latest().then(() => {
-      console.log("Migrations ran!");
-    });
+    await db.migrate
+      .latest()
+      .then(() => {
+        console.log("Migrations ran!");
+      })
+      .then(() => {
+        // import data seeding script
+        const seed = require("../data/import");
+      })
+      .then(() => {
+        console.log("Data seeded!");
+      });
 
     console.log("Starting express...");
     app.listen(PORT, () => {
