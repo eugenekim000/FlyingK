@@ -2,7 +2,6 @@
 node_modules
 /dist
 /build
-config.js
 /test/e2e/reports/
 selenium-debug.log
 
