@@ -1,8 +1,10 @@
+const mocha = require("mocha");
+// mocha.setup({ timeout: 10000 });
 const axios = require("axios");
-let chai = require("chai");
-let chaiHttp = require("chai-http");
+const chai = require("chai");
+const chaiHttp = require("chai-http");
 // let server = require("../server");
-let should = chai.should();
+const should = chai.should();
 chai.use(chaiHttp);
 
 // describe("/api/locations", () => {
@@ -27,20 +29,26 @@ chai.use(chaiHttp);
 
 describe("/api/locations", () => {
   it("should return status 200", async () => {
-    const responce = await axios.get("/api/locations");
+    const responce = await axios.get(
+      "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
+    );
     console.log(responce);
     responce.should.have.status(200);
   });
 
   it("should return array of objects", async () => {
-    const responce = await axios.get("/api/locations");
+    const responce = await axios.get(
+      "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
+    );
     responce.should.be.an("array");
     responce[0].should.be.an("object");
     responce[134].should.be.an("object");
   });
 
   it("should have property proper names", async () => {
-    const responce = await axios.get("/api/locations");
+    const responce = await axios.get(
+      "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
+    );
     expect(responce).to.have.property("id");
     expect(responce).to.have.property("latitude");
     expect(responce).to.have.property("longitude");
