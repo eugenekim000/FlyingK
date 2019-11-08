@@ -55,8 +55,13 @@ const photos = (state = defaultState, action) => {
           action.input.every((value) => location.amenities.includes(value))
         ),
       };
-    case "GET_":
-      return;
+    case "GET_RESTAURANTS":
+      return {
+        ...state,
+        locations: state.locations.filter((location) =>
+          action.input.every((value) => location.restaurants.includes(value))
+        ),
+      };
     case "GO_HOME":
       return {
         ...state,
