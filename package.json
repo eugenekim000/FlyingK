@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server",
+    "dev": "nodemon -w server",
     "hack": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
