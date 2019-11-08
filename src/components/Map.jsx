@@ -8,7 +8,7 @@ const MyMap = withGoogleMap((props) => (
     defaultZoom={4}
     defaultCenter={{ lat: 25.7392, lng: -104.9903 }}
     onClick={() => {
-      console.log("lol");
+      console.log("Map Clicked");
     }}
   >
     {props.markers.map((marker) => (
@@ -39,7 +39,7 @@ class Map extends Component {
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         onMapLoad={() => {
-          console.log("lol");
+          console.log("Map loaded.");
         }}
         onMapClick={() => {}}
         markers={this.props.locations}
