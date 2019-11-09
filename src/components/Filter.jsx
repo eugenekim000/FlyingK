@@ -16,10 +16,7 @@ class Filter extends Component {
       <div className="Filter">
         <div id="Location">
           <h5>Locations:</h5>
-          <select
-            id="locations"
-            onChange={(e) => this.props.getByState(e.target.value)}
-          >
+          <select onChange={(e) => this.props.getByState(e.target.value)}>
             <option value="default">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -74,7 +71,7 @@ class Filter extends Component {
             <option value="WY">Wyoming</option>
           </select>
 
-          <select>
+          <select onChange={(e) => this.props.getByCity(e.target.value)}>
             <option value="City">City</option>
             {uniqueCity.map((value) => {
               return <option value={value}>{value}</option>;
