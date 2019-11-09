@@ -16,7 +16,7 @@ const MyMap = withGoogleMap((props) => (
         key={marker.key}
         {...marker}
         onClick={() => {
-          console.log(marker.data, "lol");
+          console.log(marker.data);
         }}
       />
     ))}
