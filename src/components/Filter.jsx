@@ -2,9 +2,14 @@ import React, { Component } from "react";
 
 class Filter extends Component {
   render() {
-    let data = this.props.locations.map((prop) => prop.data.highway);
-    const unique = [...new Set(data)].filter(
+    let highwayData = this.props.locations.map((prop) => prop.data.highway);
+    const uniqueHighway = [...new Set(highwayData)].filter(
       (highway) => highway !== "" && highway !== "null"
+    );
+
+    let cityData = this.props.locations.map((prop) => prop.data.city);
+    const uniqueCity = [...new Set(cityData)].filter(
+      (city) => city !== "" && city !== "null"
     );
 
     return (
@@ -71,10 +76,13 @@ class Filter extends Component {
 
           <select>
             <option value="City">City</option>
+            {uniqueCity.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
           <select>
             <option value="Highway">Highway</option>
-            {unique.map((value) => {
+            {uniqueHighway.map((value) => {
               return <option value={value}>{value}</option>;
             })}
           </select>
