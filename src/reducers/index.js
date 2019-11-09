@@ -23,15 +23,15 @@ const reducer = (state = defaultState, action) => {
     case "GET_CITIES":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
-          equal(location.city, action.input)
+        locations: state.backup.filter((location) =>
+          equal(location.data.city, action.input)
         ),
       };
     case "GET_HIGHWAYS":
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          equal(location.highway, action.input)
+          equal(location.data.highway, action.input)
         ),
       };
     case "GET_TRUCK_SERVICES":

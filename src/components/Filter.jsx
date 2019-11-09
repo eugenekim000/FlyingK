@@ -2,14 +2,21 @@ import React, { Component } from "react";
 
 class Filter extends Component {
   render() {
+    let highwayData = this.props.locations.map((prop) => prop.data.highway);
+    const uniqueHighway = [...new Set(highwayData)].filter(
+      (highway) => highway !== "" && highway !== "null"
+    );
+
+    let cityData = this.props.locations.map((prop) => prop.data.city);
+    const uniqueCity = [...new Set(cityData)].filter(
+      (city) => city !== "" && city !== "null"
+    );
+
     return (
       <div className="Filter">
         <div id="Location">
           <h5>Locations:</h5>
-          <select
-            id="locations"
-            onChange={(e) => this.props.getByState(e.target.value)}
-          >
+          <select onChange={(e) => this.props.getByState(e.target.value)}>
             <option value="default">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -64,12 +71,17 @@ class Filter extends Component {
             <option value="WY">Wyoming</option>
           </select>
 
-          <select>
-            <option value="volvo">City</option>
+          <select onChange={(e) => this.props.getByCity(e.target.value)}>
+            <option value="City">City</option>
+            {uniqueCity.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
-
-          <select>
-            <option value="volvo">Highway</option>
+          <select onChange={(e) => this.props.getByHighway(e.target.value)}>
+            <option value="Highway">Highway</option>
+            {uniqueHighway.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
         </div>
       </div>
