@@ -26,8 +26,26 @@ const MyMap = withGoogleMap((props) => (
         onMouseOver={(e) => {
           props.onMarkerHover(marker.data, marker, e);
         }}
+        onFocus={() => {}}
       />
     ))}
+    {props.selectedPlace && (
+      <InfoWindow
+        pixelOffset={{ lat: 300, lng: 300, anchorPoint: 300 }}
+        className="infoWindow"
+        position={props.position}
+        marker={props.activeMarker}
+        onCLick={() => {
+          console.log(props);
+        }}
+        visible={props.showingInfoWindow}
+      >
+        <div>
+          <h1>{props.selectedPlace.name}</h1>
+          <p>{props.selectedPlace.locationType}</p>
+        </div>
+      </InfoWindow>
+    )}
   </GoogleMap>
 ));
 
@@ -38,7 +56,7 @@ class Map extends Component {
       showingInfoWindow: false,
       activeMarker: {},
       position: { lat: 42.362667, lng: -73.429423 },
-      selectedPlace: {},
+      selectedPlace: "",
     };
   }
 
@@ -67,23 +85,12 @@ class Map extends Component {
           onMarkerHover={this.onMarkerHover}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
-          onMapLoad={() => {}}
-          onMapClick={() => {}}
           markers={this.props.locations}
-          onClick={() => {}}
           getByState={this.props.getByState}
+          position={this.state.position}
+          visible={this.state.showingInfoWindow}
+          selectedPlace={this.state.selectedPlace}
         />
-        {this.state.position && (
-          <InfoWindow
-            position={this.state.position}
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-          >
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-          </InfoWindow>
-        )}
       </React.Fragment>
     );
   }
