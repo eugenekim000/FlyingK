@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { getMarkers } from "../utils";
-import data from "../data/truckStopData";
 
 class Navbar extends Component {
   render() {
@@ -8,7 +6,17 @@ class Navbar extends Component {
       <div className="Navbar">
         <h1>NAVBAR!!</h1>
         {/* <p>data</p> */}
-        <button onClick={getMarkers}>GO Home</button>
+        <button
+          onClick={() => {
+            this.props.getLocations();
+          }}
+        >
+          Get all Locations
+        </button>
+
+        <form action="http://localhost:3000/">
+          <input type="submit" value="Go Home!" />
+        </form>
       </div>
     );
   }
