@@ -8,6 +8,7 @@ class Filter extends Component {
     );
 
     let cityData = this.props.locations.map((prop) => prop.data.city);
+
     const uniqueCity = [...new Set(cityData)].filter(
       (city) => city !== "" && city !== "null"
     );

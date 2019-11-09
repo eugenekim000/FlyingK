@@ -61,7 +61,6 @@ class Map extends Component {
   }
 
   onMarkerHover = (props, marker, e) => {
-    console.log(props);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
