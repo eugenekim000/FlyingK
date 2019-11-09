@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Filter extends Component {
   render() {
+    let highwayData = this.props.locations.map((prop) => prop.data.highway);
+    const uniqueHighway = [...new Set(highwayData)].filter(
+      (highway) => highway !== "" && highway !== "null"
+    );
+
+    let cityData = this.props.locations.map((prop) => prop.data.city);
+    const uniqueCity = [...new Set(cityData)].filter(
+      (city) => city !== "" && city !== "null"
+    );
+
     return (
       <div className="Filter">
         <div id="Location">
@@ -63,12 +72,16 @@ class Filter extends Component {
           </select>
 
           <select onChange={(e) => this.props.getByCity(e.target.value)}>
-            <option value="default">City</option>
-            <option value="Clanton">Clanton</option>
+            <option value="City">City</option>
+            {uniqueCity.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
-
           <select>
-            <option value="volvo">Highway</option>
+            <option value="Highway">Highway</option>
+            {uniqueHighway.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
         </div>
       </div>
