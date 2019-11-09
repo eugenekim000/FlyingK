@@ -1,26 +1,14 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Filter extends Component {
-  componentDidUpdate() {
-    // console.log(`props`, this.props.locations);
-  }
-
   render() {
+    let data = this.props.locations.map((prop) => prop.data.highway);
+    const unique = [...new Set(data)].filter(
+      (highway) => highway !== "" && highway !== "null"
+    );
+
     return (
       <div className="Filter">
-        <button
-          onClick={() => {
-            let data = this.props.locations.map((prop) => prop.data.highway);
-            const unique = [...new Set(data)].filter(
-              (highway) => highway !== "null"
-            );
-            console.log(unique);
-          }}
-        >
-          filter button test
-        </button>
-
         <div id="Location">
           <h5>Locations:</h5>
           <select
@@ -84,9 +72,11 @@ class Filter extends Component {
           <select>
             <option value="City">City</option>
           </select>
-
           <select>
             <option value="Highway">Highway</option>
+            {unique.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
         </div>
       </div>
