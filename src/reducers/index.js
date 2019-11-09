@@ -5,7 +5,7 @@ const defaultState = {
 
 const equal = (a, b) => a === b;
 
-const photos = (state = defaultState, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "SET_LOCATIONS":
       return {
@@ -72,4 +72,4 @@ const photos = (state = defaultState, action) => {
   }
 };
 
-export default photos;
+export default reducer;
