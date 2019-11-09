@@ -14,6 +14,7 @@ export async function getMarkers() {
     defaultAnimation: 2,
     data: {
       id: l.id,
+      address: l.address,
       name: l.name,
       state: l.state,
       city: l.city,
