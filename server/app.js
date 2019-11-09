@@ -2,8 +2,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
-const db = require("./knex.js");
-
+const config = require("../config");
+const db = require("knex")(config.db);
 const app = express();
 
 // Setup logger
@@ -24,6 +24,11 @@ app.get("/api/locations", async (req, res) => {
     console.error("Error loading locations!", err);
     res.sendStatus(500);
   }
+});
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
 });
 
 // Always return the main index.html, so react-router render the route in the client
