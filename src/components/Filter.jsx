@@ -72,13 +72,13 @@ class Filter extends Component {
           </select>
 
           <select onChange={(e) => this.props.getByCity(e.target.value)}>
-            <option value="City">City</option>
+            <option value="default">City</option>
             {uniqueCity.map((value) => {
               return <option value={value}>{value}</option>;
             })}
           </select>
           <select>
-            <option value="Highway">Highway</option>
+            <option value="default">Highway</option>
             {uniqueHighway.map((value) => {
               return <option value={value}>{value}</option>;
             })}
