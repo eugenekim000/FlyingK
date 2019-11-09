@@ -37,7 +37,6 @@
     "migrate": "knex migrate:latest --knexfile models/knexfile.js",
     "rollback": "knex migrate:rollback --knexfile models/knexfile.js",
     "db-s": "heroku pg:psql --app ccx-react-b-project-staging",
-    "heroku-postbuild": "node server",
     "try": "mocha test && yarn lint"
   },
   "devDependencies": {
