@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap");
+
 .Navbar {
   display: flex;
   width: 100%;
@@ -14,14 +16,14 @@
 }
 
 .get-all-locations-button {
-  font-family: Bison;
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 16pt;
   cursor: pointer;
   width: 20%;
 }
 
 .home-button {
-  font-family: Bison;
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 16pt;
   cursor: pointer;
   width: 20%;

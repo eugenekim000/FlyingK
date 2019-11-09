@@ -12,7 +12,7 @@ class Navbar extends Component {
       <div className="Navbar">
         {/* <p>data</p> */}
         <div onClick={this.onHomeButtonClick} className="home-button button">
-          HOME
+          Home
         </div>
         <img src={logo} className="App-logo" alt="" />
         <div
@@ -21,7 +21,7 @@ class Navbar extends Component {
             this.props.getLocations();
           }}
         >
-          SHOW ALL LOCATIONS{" "}
+          Show all locations{" "}
         </div>
       </div>
     );
