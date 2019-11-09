@@ -48,15 +48,15 @@ const MyMap = withGoogleMap((props) => (
             {props.selectedPlace.amenities}
           </h5>
           <h5>
-            <strong>Select Amenities </strong>
+            <strong>Select Amenities: </strong>
             {props.selectedPlace.selectAmenities}
           </h5>
           <h5>
-            <strong> Restaurants </strong>
+            <strong> Restaurants: </strong>
             {props.selectedPlace.restaurants}
           </h5>
           <h5>
-            <strong> Fuel Prices </strong>
+            <strong> Fuel Prices: </strong>
             {props.selectedPlace.fuelPrices}
           </h5>
         </div>
