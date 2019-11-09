@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import locations from "../data/truckStopData";
 
 export async function getMarkers() {

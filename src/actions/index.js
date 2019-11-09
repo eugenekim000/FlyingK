@@ -17,10 +17,8 @@ function setLocations(locations) {
 }
 
 export function getByState(state) {
-  return function(dispatch) {
-    dispatch(() => ({
-      type: "GET_STATES",
-      input: state,
-    }));
+  return {
+    type: "GET_STATES",
+    input: state,
   };
 }

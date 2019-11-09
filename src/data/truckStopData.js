@@ -1,4 +1,4 @@
-const fs = require("fs");
+// const fs = require("fs");
 const dataPlucker = (location) => {
   const getTruckservices = (CustomFields) => {
     const truckServices = CustomFields.filter(
