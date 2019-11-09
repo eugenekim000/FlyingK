@@ -17,7 +17,7 @@ const reducer = (state = defaultState, action) => {
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          equal(location.state, action.input)
+          equal(location.data.state, action.input)
         ),
       };
     case "GET_CITIES":

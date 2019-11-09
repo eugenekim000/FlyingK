@@ -1,12 +1,16 @@
 import { connect } from "react-redux";
 import Map from "../components/Map";
-import { getLocations } from "../actions/index";
+import { getLocations, getByState } from "../actions/index";
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getLocations: () => {
       const res = getLocations();
       dispatch(res);
+    },
+    getByState: (state) => {
+      const res = getByState(state); // this is a dispatch from action
+      dispatch(res); // this action goes to reducer
     },
   };
 };
