@@ -42,10 +42,6 @@ class Map extends Component {
     };
   }
 
-  componentDidUpdate() {
-    this.props.getLocations();
-  }
-
   onMarkerHover = (props, marker, e) => {
     console.log(props, marker, e);
     this.setState({

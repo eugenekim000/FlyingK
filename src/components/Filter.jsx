@@ -77,7 +77,7 @@ class Filter extends Component {
               return <option value={value}>{value}</option>;
             })}
           </select>
-          <select>
+          <select onChange={(e) => this.props.getByHighway(e.target.value)}>
             <option value="Highway">Highway</option>
             {uniqueHighway.map((value) => {
               return <option value={value}>{value}</option>;
