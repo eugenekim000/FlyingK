@@ -15,16 +15,19 @@
     "nodemon": "^1.19.4",
     "pg": "^7.12.1",
     "react": "^16.3.2",
+    "react-app-rewired": "^2.1.5",
     "react-dom": "^16.3.2",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "web-fs": "^2.1.0"
   },
   "scripts": {
+    "yes": "nodemon server && react-scripts start",
     "start": "node server",
-    "dev": "nodemon server",
+    "dev": "nodemon -w server",
     "hack": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

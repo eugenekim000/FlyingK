@@ -26,6 +26,11 @@ app.get("/api/locations", async (req, res) => {
   }
 });
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 // Always return the main index.html, so react-router render the route in the client
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
