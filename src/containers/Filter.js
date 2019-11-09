@@ -1,6 +1,11 @@
 import { connect } from "react-redux";
 import Filter from "../components/Filter";
-import { getLocations, getByState, getByCity } from "../actions/index";
+import {
+  getLocations,
+  getByState,
+  getByCity,
+  getByHighway,
+} from "../actions/index";
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -14,6 +19,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     getByCity: (city) => {
       const res = getByCity(city);
+      dispatch(res);
+    },
+    getByHighway: (highway) => {
+      const res = getByHighway(highway);
       dispatch(res);
     },
   };
