@@ -12,13 +12,7 @@ const MyMap = withGoogleMap((props) => (
     }}
   >
     {props.markers.map((marker) => (
-      <Marker
-        key={marker.key}
-        {...marker}
-        // onClick={() => {
-        //   props.getByState(marker.data.state);
-        // }}
-      />
+      <Marker key={marker.key} {...marker} />
     ))}
   </GoogleMap>
 ));
@@ -38,13 +32,9 @@ class Map extends Component {
         className="test"
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
-        onMapLoad={() => {
-          // console.log();
-        }}
+        onMapLoad={() => {}}
         onMapClick={() => {}}
         markers={this.props.locations}
-        // onClick={() => {}}
-        // getByState={this.props.getByState}
       />
     );
   }
