@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Map from "./containers/Map";
-import Filter from "./components/Filter";
-import Navbar from "./components/Navbar";
+import Filter from "./containers/Filter";
+import Navbar from "./containers/Navbar";
 // import locations from "./data/truckStopData";
 
 class App extends Component {
@@ -15,7 +15,6 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
-          {/* <p>data</p> */}
         </div>
         <p className="App-intro" />
         <Navbar id="Navbar" />
