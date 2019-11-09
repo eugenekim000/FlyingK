@@ -7,25 +7,11 @@ class Filter extends Component {
       (highway) => highway !== "" && highway !== "null"
     );
 
-    let stateData = this.props.locations.map((prop) => prop.data.state);
     let cityData = this.props.locations.map((prop) => prop.data.city);
-    // console.log(`stateData`, stateData);
-    // console.log(`cityData`, cityData);
-
-    const stateAndCity = this.props.locations.forEach((truckStop) => {
-      const object = {};
-      if (!object[truckStop.data.city]) {
-        object[truckStop.data.city] = [];
-        object[truckStop.data.city].push(truckStop.data.state);
-      }
-    });
 
     const uniqueCity = [...new Set(cityData)].filter(
       (city) => city !== "" && city !== "null"
     );
-
-    // let selectedState = stateData[0];
-    // console.log(`selectedState`, selectedState);
 
     return (
       <div className="Filter">

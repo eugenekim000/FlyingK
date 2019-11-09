@@ -43,14 +43,12 @@ class Map extends Component {
   }
 
   onMarkerHover = (props, marker, e) => {
-    // console.log(props, marker, e);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       position: marker.position,
       showingInfoWindow: true,
     });
-    // console.log(this.state);
   };
 
   async componentDidMount() {
