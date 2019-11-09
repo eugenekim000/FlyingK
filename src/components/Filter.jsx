@@ -2,19 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class Filter extends Component {
-  componentDidUpdate() {
-    // console.log(`props`, this.props.locations);
-  }
-
   render() {
     return (
       <div className="Filter">
         <div id="Location">
           <h5>Locations:</h5>
-          <select
-            id="locations"
-            onChange={(e) => this.props.getByState(e.target.value)}
-          >
+          <select onChange={(e) => this.props.getByState(e.target.value)}>
             <option value="default">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -69,8 +62,9 @@ class Filter extends Component {
             <option value="WY">Wyoming</option>
           </select>
 
-          <select>
-            <option value="volvo">City</option>
+          <select onChange={(e) => this.props.getByCity(e.target.value)}>
+            <option value="default">City</option>
+            <option value="Clanton">Clanton</option>
           </select>
 
           <select>

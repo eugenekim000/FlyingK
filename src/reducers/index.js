@@ -14,8 +14,6 @@ const reducer = (state = defaultState, action) => {
         backup: action.locations,
       };
     case "GET_STATES":
-      console.log(`locations`, state.locations);
-      console.log(`locations`, state.locations);
       return {
         ...state,
         locations: state.backup.filter((location) =>
@@ -25,8 +23,8 @@ const reducer = (state = defaultState, action) => {
     case "GET_CITIES":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
-          equal(location.city, action.input)
+        locations: state.backup.filter((location) =>
+          equal(location.data.city, action.input)
         ),
       };
     case "GET_HIGHWAYS":
