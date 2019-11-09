@@ -30,3 +30,14 @@
 .gm-style-iw-t::after {
   top: -60px !important;
 }
+
+#infoWindow {
+  overflow-y: auto;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+}
+
+h5 {
+  font-weight: normal;
+}

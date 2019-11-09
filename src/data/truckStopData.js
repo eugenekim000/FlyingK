@@ -52,4 +52,5 @@ const dataPlucker = (location) => {
 
 const locations = require("./locations.json");
 const data = locations.map((location) => dataPlucker(location));
+console.log(data);
 module.exports = data;

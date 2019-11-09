@@ -20,17 +20,20 @@ const reducer = (state = defaultState, action) => {
           equal(location.data.state, action.input)
         ),
       };
-    case "GET_CITIES":
+    case "GET_CITIES": {
+      const clone = state.locations;
+
       return {
         ...state,
-        locations: state.backup.filter((location) =>
-          equal(location.data.city, action.input)
-        ),
+        locations: clone.filter((location) => {
+          return equal(location.data.city, action.input);
+        }),
       };
+    }
     case "GET_HIGHWAYS":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
+        locations: state.backup.filter((location) =>
           equal(location.data.highway, action.input)
         ),
       };

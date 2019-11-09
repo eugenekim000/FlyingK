@@ -23,10 +23,7 @@ const MyMap = withGoogleMap((props) => (
       <Marker
         key={marker.key}
         {...marker}
-        onClick={() => {
-          props.getByState(marker.data.state);
-        }}
-        onMouseOver={(e) => {
+        onClick={(e) => {
           props.onMarkerHover(marker.data, marker, e);
         }}
         onFocus={() => {}}
@@ -38,14 +35,33 @@ const MyMap = withGoogleMap((props) => (
         className="infoWindow"
         position={props.position}
         marker={props.activeMarker}
-        onCLick={() => {
+        onClick={() => {
           console.log(props);
         }}
         visible={props.showingInfoWindow}
       >
-        <div>
-          <h1>{props.selectedPlace.name}</h1>
-          <p>{props.selectedPlace.locationType}</p>
+        <div id="infoWindow">
+          <h2>{props.selectedPlace.name}</h2>
+          <h5>
+            <strong>Truck Services: </strong>
+            {props.selectedPlace.truckServices}
+          </h5>
+          <h5>
+            <strong>Amenities: </strong>
+            {props.selectedPlace.amenities}
+          </h5>
+          <h5>
+            <strong>Select Amenities </strong>
+            {props.selectedPlace.selectAmenities}
+          </h5>
+          <h5>
+            <strong> Restaurants </strong>
+            {props.selectedPlace.restaurants}
+          </h5>
+          <h5>
+            <strong> Fuel Prices </strong>
+            {props.selectedPlace.fuelPrices}
+          </h5>
         </div>
       </InfoWindow>
     )}
@@ -64,7 +80,6 @@ class Map extends Component {
   }
 
   onMarkerHover = (props, marker, e) => {
-    console.log(props);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
