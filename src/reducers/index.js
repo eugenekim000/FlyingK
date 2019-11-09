@@ -14,6 +14,8 @@ const reducer = (state = defaultState, action) => {
         backup: action.locations,
       };
     case "GET_STATES":
+      console.log(`locations`, state.locations);
+      console.log(`locations`, state.locations);
       return {
         ...state,
         locations: state.backup.filter((location) =>
