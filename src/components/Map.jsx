@@ -15,6 +15,7 @@ const MyMap = withGoogleMap((props) => (
     ref={props.onMapLoad}
     defaultZoom={4}
     defaultCenter={{ lat: 39.8283, lng: -98.5795 }}
+    setCenter={props.center}
     onClick={() => {
       console.log("Map Clicked");
     }}
@@ -41,27 +42,46 @@ const MyMap = withGoogleMap((props) => (
         visible={props.showingInfoWindow}
       >
         <div id="infoWindow">
-          <h2>{props.selectedPlace.name}</h2>
-          <h5>
-            <strong>Truck Services: </strong>
-            {props.selectedPlace.truckServices}
-          </h5>
-          <h5>
-            <strong>Amenities: </strong>
-            {props.selectedPlace.amenities}
-          </h5>
-          <h5>
-            <strong>Select Amenities </strong>
-            {props.selectedPlace.selectAmenities}
-          </h5>
-          <h5>
-            <strong> Restaurants </strong>
-            {props.selectedPlace.restaurants}
-          </h5>
-          <h5>
-            <strong> Fuel Prices </strong>
-            {props.selectedPlace.fuelPrices}
-          </h5>
+          <h3>{props.selectedPlace.name.split("-").join(" ")}</h3>
+          <div className="truck-services-info-window info">
+            <h5>
+              <strong>Truck Services</strong>
+              <br />
+
+              {props.selectedPlace.truckServices || "None"}
+            </h5>
+          </div>
+          <div className="amenities-info-window info">
+            <h5>
+              <strong>Amenities</strong>
+              <br />
+
+              {props.selectedPlace.amenities || "None"}
+            </h5>
+          </div>
+          <div className="select-amenities-info-window info">
+            <h5>
+              <strong>Select Amenities </strong>
+              <br />
+
+              {props.selectedPlace.selectAmenities || "None"}
+            </h5>
+          </div>
+          <div className="restaurants-info-window info">
+            <h5>
+              <strong> Restaurants </strong>
+              <br />
+
+              {props.selectedPlace.restaurants || "None"}
+            </h5>
+          </div>
+          <div className="fuel-prices-info-window info">
+            <h5>
+              <strong> Fuel Prices </strong>
+              <br />
+              {props.selectedPlace.fuelPrices.split(":").join(" ") || "None"}
+            </h5>
+          </div>
         </div>
       </InfoWindow>
     )}
@@ -74,7 +94,7 @@ class Map extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      position: { lat: 42.362667, lng: -73.429423 },
+      position: { lat: 39.8283, lng: -98.5795 },
       selectedPlace: "",
     };
   }
@@ -109,6 +129,7 @@ class Map extends Component {
           position={this.state.position}
           visible={this.state.showingInfoWindow}
           selectedPlace={this.state.selectedPlace}
+          center={this.props.position}
         />
       </React.Fragment>
     );
