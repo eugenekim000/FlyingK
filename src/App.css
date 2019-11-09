@@ -1,5 +1,7 @@
 .App {
   display: flex;
+  position: fixed;
+  overflow: scroll;
   width: 100%;
   flex-direction: row;
   align-items: flex-start;

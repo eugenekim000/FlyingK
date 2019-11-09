@@ -13,7 +13,7 @@ const MyMap = withGoogleMap((props) => (
   <GoogleMap
     className="googleMap"
     ref={props.onMapLoad}
-    defaultZoom={3.2}
+    defaultZoom={4}
     defaultCenter={{ lat: 39.8283, lng: -98.5795 }}
     setCenter={props.center}
     onClick={() => {
@@ -24,7 +24,7 @@ const MyMap = withGoogleMap((props) => (
       <Marker
         key={marker.key}
         {...marker}
-        onClick={(e) => {
+        onMouseOver={(e) => {
           props.onMarkerHover(marker.data, marker, e);
         }}
         onFocus={() => {}}
@@ -43,45 +43,8 @@ const MyMap = withGoogleMap((props) => (
       >
         <div id="infoWindow">
           <h3>{props.selectedPlace.name.split("-").join(" ")}</h3>
-          <div className="truck-services-info-window info">
-            <h5>
-              <strong>Truck Services</strong>
-              <br />
-
-              {props.selectedPlace.truckServices || "None"}
-            </h5>
-          </div>
-          <div className="amenities-info-window info">
-            <h5>
-              <strong>Amenities</strong>
-              <br />
-
-              {props.selectedPlace.amenities || "None"}
-            </h5>
-          </div>
-          <div className="select-amenities-info-window info">
-            <h5>
-              <strong>Select Amenities </strong>
-              <br />
-
-              {props.selectedPlace.selectAmenities || "None"}
-            </h5>
-          </div>
-          <div className="restaurants-info-window info">
-            <h5>
-              <strong> Restaurants </strong>
-              <br />
-
-              {props.selectedPlace.restaurants || "None"}
-            </h5>
-          </div>
-          <div className="fuel-prices-info-window info">
-            <h5>
-              <strong> Fuel Prices </strong>
-              <br />
-              {props.selectedPlace.fuelPrices.split(":").join(" ") || "None"}
-            </h5>
-          </div>
+          <p>{props.selectedPlace.address}</p>
+          <h4>{props.selectedPlace.locationType}</h4>
         </div>
       </InfoWindow>
     )}
