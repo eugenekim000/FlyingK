@@ -15,3 +15,12 @@ function setLocations(locations) {
     locations,
   };
 }
+
+export function getByState(state) {
+  return function(dispatch) {
+    dispatch(() => ({
+      type: "GET_STATES",
+      input: state,
+    }));
+  };
+}
