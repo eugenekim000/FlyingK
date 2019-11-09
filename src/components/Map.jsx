@@ -6,12 +6,15 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+import { width } from "window-size";
+import "../Map.css";
 
 const MyMap = withGoogleMap((props) => (
   <GoogleMap
+    className="googleMap"
     ref={props.onMapLoad}
     defaultZoom={4}
-    defaultCenter={{ lat: 25.7392, lng: -104.9903 }}
+    defaultCenter={{ lat: 39.8283, lng: -98.5795 }}
     onClick={() => {
       console.log("Map Clicked");
     }}
@@ -84,8 +87,8 @@ class Map extends Component {
         <MyMap
           className="test"
           onMarkerHover={this.onMarkerHover}
-          containerElement={<div style={{ height: `100%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+          containerElement={<div className="mapContainer" />}
+          mapElement={<div style={{ height: `100%`, width: `100%` }} />}
           markers={this.props.locations}
           getByState={this.props.getByState}
           position={this.state.position}

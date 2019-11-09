@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Filter.css";
 
 class Filter extends Component {
   render() {
@@ -15,8 +16,11 @@ class Filter extends Component {
     return (
       <div className="Filter">
         <div id="Location">
-          <h5>Locations:</h5>
-          <select onChange={(e) => this.props.getByState(e.target.value)}>
+          <h4>FILTER STORES BY LOCATION</h4>
+          <select
+            className="select-state"
+            onChange={(e) => this.props.getByState(e.target.value)}
+          >
             <option value="default">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -71,13 +75,19 @@ class Filter extends Component {
             <option value="WY">Wyoming</option>
           </select>
 
-          <select onChange={(e) => this.props.getByCity(e.target.value)}>
+          <select
+            className="select-city"
+            onChange={(e) => this.props.getByCity(e.target.value)}
+          >
             <option value="City">City</option>
             {uniqueCity.map((value) => {
               return <option value={value}>{value}</option>;
             })}
           </select>
-          <select onChange={(e) => this.props.getByHighway(e.target.value)}>
+          <select
+            className="select-highway"
+            onChange={(e) => this.props.getByHighway(e.target.value)}
+          >
             <option value="Highway">Highway</option>
             {uniqueHighway.map((value) => {
               return <option value={value}>{value}</option>;
