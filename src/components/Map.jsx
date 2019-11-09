@@ -13,7 +13,7 @@ const MyMap = withGoogleMap((props) => (
   <GoogleMap
     className="googleMap"
     ref={props.onMapLoad}
-    defaultZoom={4}
+    defaultZoom={3.2}
     defaultCenter={{ lat: 39.8283, lng: -98.5795 }}
     setCenter={props.center}
     onClick={() => {
@@ -123,7 +123,11 @@ class Map extends Component {
           className="test"
           onMarkerHover={this.onMarkerHover}
           containerElement={<div className="mapContainer" />}
-          mapElement={<div style={{ height: `100%`, width: `100%` }} />}
+          mapElement={
+            <div
+              style={{ height: `100%`, width: `100%`, "border-radius": "5px" }}
+            />
+          }
           markers={this.props.locations}
           getByState={this.props.getByState}
           position={this.state.position}

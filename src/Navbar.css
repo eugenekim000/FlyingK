@@ -1,14 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap");
 
 .Navbar {
+  text-align: center;
   display: flex;
+  position: fixed;
   width: 100%;
-  height: 20%;
+  height: 25%;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   filter: invert(100%);
-  background: rgb(255, 245, 230);
+  background: rgba(255, 255, 255, 0.972);
+  border-bottom: 2px rgb(245, 245, 245) solid;
+  z-index: 99;
 }
 
 .App-logo {
