@@ -26,11 +26,11 @@ class Filter extends Component {
           </select>
 
           <select>
-            <option value="volvo">City</option>
+            <option value="City">City</option>
           </select>
 
           <select>
-            <option value="volvo">Highway</option>
+            <option value="Highway">Highway</option>
           </select>
         </div>
       </div>
