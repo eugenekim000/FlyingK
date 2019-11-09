@@ -16,7 +16,7 @@ const reducer = (state = defaultState, action) => {
     case "GET_STATES":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
+        locations: state.backup.filter((location) =>
           equal(location.data.state, action.input)
         ),
       };
