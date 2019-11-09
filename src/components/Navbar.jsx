@@ -7,7 +7,6 @@ class Navbar extends Component {
     return (
       <div className="Navbar">
         <h1>NAVBAR!!</h1>
-        {/* <p>data</p> */}
         <button onClick={getMarkers}>GO Home</button>
       </div>
     );

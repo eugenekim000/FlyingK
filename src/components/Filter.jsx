@@ -8,9 +8,8 @@ class Filter extends Component {
           <h5>Locations:</h5>
           <select id="locations">
             <option value="volvo">State</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="saab">CA</option>
+            <option value="mercedes">NY</option>
           </select>
 
           <select>
