@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Map from "./containers/Map";
-import Filter from "./components/Filter";
+import Filter from "./containers/Filter";
 import Navbar from "./containers/Navbar";
 // import locations from "./data/truckStopData";
 

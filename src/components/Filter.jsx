@@ -4,6 +4,18 @@ class Filter extends Component {
   render() {
     return (
       <div className="Filter">
+        <button
+          onClick={() => {
+            let data = this.props.locations.map((prop) => prop.data.highway);
+            const unique = [...new Set(data)].filter(
+              (highway) => highway !== "null"
+            );
+            console.log(unique);
+          }}
+        >
+          filter button test
+        </button>
+
         <div id="Location">
           <h5>Locations:</h5>
           <select id="locations">
