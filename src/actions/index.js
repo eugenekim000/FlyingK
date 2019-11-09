@@ -26,3 +26,7 @@ export function getByState(state) {
 export function getByCity(city) {
   return { type: "GET_CITIES", input: city };
 }
+
+export function getByHighway(highway) {
+  return { type: "GET_HIGHWAYS", input: highway };
+}
