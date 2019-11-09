@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Filter extends Component {
-  componentDidUpdate() {
-    // console.log(`props`, this.props.locations);
-  }
-
   render() {
+    let data = this.props.locations.map((prop) => prop.data.highway);
+    const unique = [...new Set(data)].filter(
+      (highway) => highway !== "" && highway !== "null"
+    );
+
     return (
       <div className="Filter">
         <div id="Location">
@@ -70,11 +70,13 @@ class Filter extends Component {
           </select>
 
           <select>
-            <option value="volvo">City</option>
+            <option value="City">City</option>
           </select>
-
           <select>
-            <option value="volvo">Highway</option>
+            <option value="Highway">Highway</option>
+            {unique.map((value) => {
+              return <option value={value}>{value}</option>;
+            })}
           </select>
         </div>
       </div>
