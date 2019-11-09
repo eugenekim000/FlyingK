@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Map from "./containers/Map";
 import Filter from "./containers/Filter";
-import Navbar from "./components/Navbar";
+import Navbar from "./containers/Navbar";
 // import locations from "./data/truckStopData";
 
 class App extends Component {
