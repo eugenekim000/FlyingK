@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 class Filter extends Component {
-  componentDidUpdate() {
-    // console.log(`props`, this.props.locations);
-  }
-
   render() {
     return (
       <div className="Filter">
