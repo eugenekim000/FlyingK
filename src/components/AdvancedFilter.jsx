@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../AdvancedFilter.css";
+import "../css/AdvancedFilter.css";
 
 class AdvancedFilter extends Component {
   render() {

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./App.css";
-import "./SearchResults.css";
-import Map from "./containers/Map";
-import Filter from "./containers/Filter";
-import Navbar from "./containers/Navbar";
-import AdvancedFilter from "./containers/AdvancedFilter";
+import "../css/App.css";
+import "../css/SearchResults.css";
+import Map from "../containers/Map";
+import Filter from "../containers/Filter";
+import Navbar from "../containers/Navbar";
+import AdvancedFilter from "../containers/AdvancedFilter";
 
 class App extends Component {
   constructor() {
