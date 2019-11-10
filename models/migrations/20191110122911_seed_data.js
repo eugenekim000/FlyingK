@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
 
   for (const location of truckStopData) {
     const siteId = location.id;
+    const address = location.address;
     const latitude = location.latitude;
     const longitude = location.longitude;
     const name = location.name;
@@ -18,6 +19,7 @@ exports.up = function(knex, Promise) {
     const fuelPrices = location.fuelPrices;
     seed.push({
       siteId,
+      address,
       latitude,
       longitude,
       name,
