@@ -21,46 +21,46 @@ chai.use(chaiHttp);
 //   });
 // });
 
-// let responce;
+// let response;
 // describe("response", () => {
 //   beforeEach(() => {
-//     responce = await axios.get("/api/locations");
+//     response = await axios.get("/api/locations");
 //   });
 
 describe("/api/locations", () => {
   it("should return status 200", async () => {
-    const responce = await axios.get(
+    const response = await axios.get(
       "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
     );
-    console.log(responce);
-    responce.should.have.status(200);
+    console.log(response);
+    response.should.have.status(200);
   });
 
   it("should return array of objects", async () => {
-    const responce = await axios.get(
+    const response = await axios.get(
       "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
     );
-    responce.should.be.an("array");
-    responce[0].should.be.an("object");
-    responce[134].should.be.an("object");
+    response.should.be.an("array");
+    response[0].should.be.an("object");
+    response[134].should.be.an("object");
   });
 
   it("should have property proper names", async () => {
-    const responce = await axios.get(
+    const response = await axios.get(
       "https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja"
     );
-    expect(responce).to.have.property("id");
-    expect(responce).to.have.property("latitude");
-    expect(responce).to.have.property("longitude");
-    expect(responce).to.have.property("name");
-    expect(responce).to.have.property("state");
-    expect(responce).to.have.property("city");
-    expect(responce).to.have.property("highway");
-    expect(responce).to.have.property("locationType");
-    expect(responce).to.have.property("truckServices");
-    expect(responce).to.have.property("amenities");
-    expect(responce).to.have.property("selectAmenities");
-    expect(responce).to.have.property("restaurants");
-    expect(responce).to.have.property("fuelPrices");
+    expect(response).to.have.property("id");
+    expect(response).to.have.property("latitude");
+    expect(response).to.have.property("longitude");
+    expect(response).to.have.property("name");
+    expect(response).to.have.property("state");
+    expect(response).to.have.property("city");
+    expect(response).to.have.property("highway");
+    expect(response).to.have.property("locationType");
+    expect(response).to.have.property("truckServices");
+    expect(response).to.have.property("amenities");
+    expect(response).to.have.property("selectAmenities");
+    expect(response).to.have.property("restaurants");
+    expect(response).to.have.property("fuelPrices");
   });
 });
