@@ -4,12 +4,14 @@ import "./SearchResults.css";
 import Map from "./containers/Map";
 import Filter from "./containers/Filter";
 import Navbar from "./containers/Navbar";
+import AdvancedFilter from "./containers/AdvancedFilter";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       searchActive: true,
+      advancedFilter: true,
     };
   }
 
@@ -19,6 +21,7 @@ class App extends Component {
         <Navbar id="Navbar" />
         <Filter id="Filter" />
         <Map id="map" />
+        {this.state.advancedFilter && <AdvancedFilter id="Filter" />}
         {this.state.searchActive && (
           <div className="search-results">
             <h1 className="search-results-title">Search Results</h1>
