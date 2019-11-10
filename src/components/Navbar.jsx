@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import logo from "../truckstop-logo.png";
-import "../Navbar.css";
+import logo from "../assets/truckstop-logo.png";
+import "../css/Navbar.css";
 
 class Navbar extends Component {
   onHomeButtonClick() {

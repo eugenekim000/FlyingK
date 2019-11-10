@@ -7,7 +7,7 @@
   align-items: flex-start;
   justify-content: space-around;
   background: rgb(250, 250, 250);
-  background-image: url("./tyre-1.jpg");
+  background-image: url("../assets/tyre-1.jpg");
   background-size: cover;
   flex-wrap: wrap;
 }

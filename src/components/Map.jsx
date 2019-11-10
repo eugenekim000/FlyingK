@@ -6,8 +6,8 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
-import { width } from "window-size";
-import "../Map.css";
+// import { width } from "window-size";
+import "../css/Map.css";
 
 const MyMap = withGoogleMap((props) => (
   <GoogleMap
