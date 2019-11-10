@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "../assets/truckstop-logo.png";
 import "../css/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faRedo } from "@fortawesome/free-solid-svg-icons";
 
 class Navbar extends Component {
   onHomeButtonClick() {
@@ -10,9 +12,8 @@ class Navbar extends Component {
   render() {
     return (
       <div className="Navbar">
-        {/* <p>data</p> */}
         <div onClick={this.onHomeButtonClick} className="home-button button">
-          Home
+          <FontAwesomeIcon icon={faHome} />
         </div>
         <img src={logo} className="App-logo" alt="" />
         <div
@@ -21,7 +22,7 @@ class Navbar extends Component {
             this.props.getLocations();
           }}
         >
-          Show all locations{" "}
+          <FontAwesomeIcon icon={faRedo} />
         </div>
       </div>
     );
