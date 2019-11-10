@@ -1,5 +1,7 @@
 const truckStopData = require("../../truckStopData");
 exports.up = function(knex, Promise) {
+  const seed = [];
+
   for (const location of truckStopData) {
     const siteId = location.id;
     const latitude = location.latitude;
@@ -14,8 +16,7 @@ exports.up = function(knex, Promise) {
     const selectAmenities = location.selectAmenities;
     const restaurants = location.restaurants;
     const fuelPrices = location.fuelPrices;
-
-    return knex("locations").insert({
+    seed.push({
       siteId,
       latitude,
       longitude,
@@ -31,6 +32,7 @@ exports.up = function(knex, Promise) {
       fuelPrices,
     });
   }
+  return knex("locations").insert(seed);
 };
 
 exports.down = function(knex, Promise) {};
