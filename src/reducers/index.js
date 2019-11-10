@@ -47,8 +47,8 @@ const reducer = (state = defaultState, action) => {
     case "GET_TYPE":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
-          action.input.every((value) => location.type.includes(value))
+        locations: state.backup.filter((location) =>
+          equal(location.data.locationType, action.input)
         ),
       };
     case "GET_AMENITIES":
@@ -61,8 +61,8 @@ const reducer = (state = defaultState, action) => {
     case "GET_RESTAURANTS":
       return {
         ...state,
-        locations: state.locations.filter((location) =>
-          action.input.every((value) => location.restaurants.includes(value))
+        locations: state.backup.filter((location) =>
+          equal(location.data.restaurants, action.input)
         ),
       };
     case "GO_HOME":
