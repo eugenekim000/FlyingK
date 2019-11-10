@@ -41,13 +41,13 @@ const reducer = (state = defaultState, action) => {
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.truckServices.includes(value))
+          location.data.truckServices.includes(action.input)
         ),
       };
     case "GET_TYPE":
       return {
         ...state,
-        locations: state.backup.filter((location) =>
+        locations: state.locations.filter((location) =>
           equal(location.data.locationType, action.input)
         ),
       };
@@ -55,13 +55,13 @@ const reducer = (state = defaultState, action) => {
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.amenities.includes(value))
+          location.data.amenities.includes(action.input)
         ),
       };
     case "GET_RESTAURANTS":
       return {
         ...state,
-        locations: state.backup.filter((location) =>
+        locations: state.locations.filter((location) =>
           equal(location.data.restaurants, action.input)
         ),
       };

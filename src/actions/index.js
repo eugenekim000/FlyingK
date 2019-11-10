@@ -38,3 +38,11 @@ export function getByType(type) {
 export function getByRestaurants(food) {
   return { type: "GET_RESTAURANTS", input: food };
 }
+
+export function getByService(service) {
+  return { type: "GET_TRUCK_SERVICES", input: service };
+}
+
+export function getByAmenities(service) {
+  return { type: "GET_AMENITIES", input: service };
+}

@@ -7,6 +7,8 @@ import {
   getByHighway,
   getByType,
   getByRestaurants,
+  getByService,
+  getByAmenities,
 } from "../actions/index";
 
 const mapDispatchToProps = (dispatch) => {
@@ -33,6 +35,14 @@ const mapDispatchToProps = (dispatch) => {
     },
     getByRestaurants: (food) => {
       const res = getByRestaurants(food);
+      dispatch(res);
+    },
+    getByService: (service) => {
+      const res = getByService(service);
+      dispatch(res);
+    },
+    getByAmenities: (amenity) => {
+      const res = getByAmenities(amenity);
       dispatch(res);
     },
   };
