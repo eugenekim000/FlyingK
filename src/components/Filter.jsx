@@ -14,6 +14,9 @@ class Filter extends Component {
       (city) => city !== "" && city !== "null"
     );
 
+    // sort alphabetically
+    uniqueCity.sort();
+    uniqueHighway.sort();
     return (
       <div className="Filter">
         <h4>Search stops by location.</h4>
