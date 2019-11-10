@@ -2,5 +2,8 @@
   width: 90% !important;
   margin-top: 6% !important;
   height: 30%;
-  background: white;
+  background: black;
+  color: white;
+  padding: 25px 50px 75px 100px;
+  overflow: scroll;
 }

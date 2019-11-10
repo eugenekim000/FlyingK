@@ -41,28 +41,28 @@ const reducer = (state = defaultState, action) => {
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.truckServices.includes(value))
+          location.data.truckServices.includes(action.input)
         ),
       };
     case "GET_TYPE":
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.type.includes(value))
+          equal(location.data.locationType, action.input)
         ),
       };
     case "GET_AMENITIES":
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.amenities.includes(value))
+          location.data.amenities.includes(action.input)
         ),
       };
     case "GET_RESTAURANTS":
       return {
         ...state,
         locations: state.locations.filter((location) =>
-          action.input.every((value) => location.restaurants.includes(value))
+          equal(location.data.restaurants, action.input)
         ),
       };
     case "GO_HOME":

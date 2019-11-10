@@ -5,6 +5,10 @@ import {
   getByState,
   getByCity,
   getByHighway,
+  getByType,
+  getByRestaurants,
+  getByService,
+  getByAmenities,
 } from "../actions/index";
 
 const mapDispatchToProps = (dispatch) => {
@@ -23,6 +27,22 @@ const mapDispatchToProps = (dispatch) => {
     },
     getByHighway: (highway) => {
       const res = getByHighway(highway);
+      dispatch(res);
+    },
+    getByType: (type) => {
+      const res = getByType(type);
+      dispatch(res);
+    },
+    getByRestaurants: (food) => {
+      const res = getByRestaurants(food);
+      dispatch(res);
+    },
+    getByService: (service) => {
+      const res = getByService(service);
+      dispatch(res);
+    },
+    getByAmenities: (amenity) => {
+      const res = getByAmenities(amenity);
       dispatch(res);
     },
   };
