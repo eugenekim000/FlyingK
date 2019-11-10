@@ -35,3 +35,10 @@
 .gm-style-iw-d {
   overflow: hidden !important;
 }
+
+@media screen and (max-width: 700px) {
+  .mapContainer {
+    width: 80%;
+    border: 1px rgb(231, 231, 231) solid;
+  }
+}
