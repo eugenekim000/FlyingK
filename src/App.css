@@ -1,17 +1,15 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  display: flex;
+  position: fixed;
+  overflow: scroll;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  background: rgb(250, 250, 250);
+  background-image: url("./tyre-1.jpg");
+  background-size: cover;
+  flex-wrap: wrap;
 }
 
 .App-intro {
@@ -28,7 +26,6 @@
 }
 
 .infoWindow {
-  /* display: block; */
   width: 300px;
   height: 300px;
   background: white;

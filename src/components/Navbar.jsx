@@ -1,22 +1,28 @@
 import React, { Component } from "react";
+import logo from "../truckstop-logo.png";
+import "../Navbar.css";
 
 class Navbar extends Component {
+  onHomeButtonClick() {
+    window.location.href = "/";
+  }
+
   render() {
     return (
       <div className="Navbar">
-        <h1>NAVBAR!!</h1>
         {/* <p>data</p> */}
-        <button
+        <div onClick={this.onHomeButtonClick} className="home-button button">
+          Home
+        </div>
+        <img src={logo} className="App-logo" alt="" />
+        <div
+          className="get-all-locations-button button"
           onClick={() => {
             this.props.getLocations();
           }}
         >
-          Get all Locations
-        </button>
-
-        <form action="http://localhost:3000/">
-          <input type="submit" value="Go Home!" />
-        </form>
+          Show all locations{" "}
+        </div>
       </div>
     );
   }

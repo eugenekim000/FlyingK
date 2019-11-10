@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap");
+
+.Filter {
+  display: flex;
+  width: 30%;
+  height: 60%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  filter: invert(100%);
+  background: rgba(255, 255, 255, 0.972);
+  border-radius: 5px;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.select {
+  font-family: "Merriweather Sans", sans-serif;
+  width: 80%;
+  font-size: 20px;
+}

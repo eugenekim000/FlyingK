@@ -36,6 +36,9 @@ const dataPlucker = (location) => {
 
   return {
     id: location.SiteId,
+    address: `${location.Addresses[0].Address1}, ${
+      location.Addresses[0].City
+    }, ${location.Addresses[0].State} ${location.Addresses[0].Zip}`,
     latitude: location.Site.Latitude,
     longitude: location.Site.Longitude,
     name: location.Name,

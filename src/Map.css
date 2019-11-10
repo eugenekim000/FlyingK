@@ -1,0 +1,37 @@
+.mapContainer {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: black;
+  border-radius: 5px !important;
+}
+
+.mapContainer:first-child {
+  border-radius: 5px !important;
+}
+
+#infoWindow {
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  margin: 0 !important;
+  padding: 10px 20px 10px 10px;
+  overflow: scroll;
+  height: 4%;
+}
+
+.info {
+  width: 90%;
+  border: whitesmoke 1px solid;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 4px;
+}
+
+/* this hides the extra scroller on infoWindow */
+.gm-style-iw-d {
+  overflow: hidden !important;
+}

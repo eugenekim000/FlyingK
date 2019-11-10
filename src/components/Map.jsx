@@ -6,12 +6,16 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+import { width } from "window-size";
+import "../Map.css";
 
 const MyMap = withGoogleMap((props) => (
   <GoogleMap
+    className="googleMap"
     ref={props.onMapLoad}
     defaultZoom={4}
-    defaultCenter={{ lat: 25.7392, lng: -104.9903 }}
+    defaultCenter={{ lat: 39.8283, lng: -98.5795 }}
+    setCenter={props.center}
     onClick={() => {
       console.log("Map Clicked");
     }}
@@ -20,7 +24,7 @@ const MyMap = withGoogleMap((props) => (
       <Marker
         key={marker.key}
         {...marker}
-        onClick={(e) => {
+        onMouseOver={(e) => {
           props.onMarkerHover(marker.data, marker, e);
         }}
         onFocus={() => {}}
@@ -38,27 +42,9 @@ const MyMap = withGoogleMap((props) => (
         visible={props.showingInfoWindow}
       >
         <div id="infoWindow">
-          <h2>{props.selectedPlace.name}</h2>
-          <h5>
-            <strong>Truck Services: </strong>
-            {props.selectedPlace.truckServices}
-          </h5>
-          <h5>
-            <strong>Amenities: </strong>
-            {props.selectedPlace.amenities}
-          </h5>
-          <h5>
-            <strong>Select Amenities: </strong>
-            {props.selectedPlace.selectAmenities}
-          </h5>
-          <h5>
-            <strong> Restaurants: </strong>
-            {props.selectedPlace.restaurants}
-          </h5>
-          <h5>
-            <strong> Fuel Prices: </strong>
-            {props.selectedPlace.fuelPrices}
-          </h5>
+          <h3>{props.selectedPlace.name.split("-").join(" ")}</h3>
+          <p>{props.selectedPlace.address}</p>
+          <h4>{props.selectedPlace.locationType}</h4>
         </div>
       </InfoWindow>
     )}
@@ -71,13 +57,12 @@ class Map extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      position: { lat: 42.362667, lng: -73.429423 },
+      position: { lat: 39.8283, lng: -98.5795 },
       selectedPlace: "",
     };
   }
 
   onMarkerHover = (props, marker, e) => {
-    console.log(props);
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -100,13 +85,18 @@ class Map extends Component {
         <MyMap
           className="test"
           onMarkerHover={this.onMarkerHover}
-          containerElement={<div style={{ height: `100%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+          containerElement={<div className="mapContainer" />}
+          mapElement={
+            <div
+              style={{ height: `100%`, width: `100%`, "border-radius": "5px" }}
+            />
+          }
           markers={this.props.locations}
           getByState={this.props.getByState}
           position={this.state.position}
           visible={this.state.showingInfoWindow}
           selectedPlace={this.state.selectedPlace}
+          center={this.props.position}
         />
       </React.Fragment>
     );
