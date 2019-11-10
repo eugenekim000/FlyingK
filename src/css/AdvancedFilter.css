@@ -1,6 +1,79 @@
-.advanced-filter {
-  width: 90% !important;
-  margin-top: 6% !important;
-  height: 30%;
-  background: white;
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap");
+
+.AdvancedFilter {
+  font-family: "Merriweather Sans", sans-serif;
+  display: flex;
+  width: 30%;
+  height: 50%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  filter: invert(100%);
+  background: rgba(250, 250, 250, 0.952);
+  border-radius: 5px;
+  font-size: 10px;
+  overflow: scroll;
+  user-select: none;
+}
+
+.a-filters-title {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 0;
+  height: 5%;
+  text-align: center;
+  /* position: relative; */
+}
+
+.filters-wrapper {
+  width: 90%;
+  height: 80%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: left;
+}
+
+.a-filter-wrapper {
+  width: 40%;
+}
+
+h3 {
+  width: 100%;
+}
+
+.a-filter-container {
+  font-size: 8px;
+  width: 100%;
+  /* border: red solid 1px; */
+  /* background: white; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: left;
+}
+
+.checkbox {
+  margin: 5px;
+}
+
+.checkbox-container {
+  width: 100%;
+  /* border: sred solid 1px; */
+}
+
+@media screen and (max-width: 700px) {
+  .AdvancedFilter {
+    width: 80%;
+    margin-bottom: 6%;
+    border: 1px rgb(231, 231, 231) solid;
+  }
+
+  .select {
+    border: 1px rgb(231, 231, 231) solid;
+  }
 }
