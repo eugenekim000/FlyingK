@@ -12,6 +12,7 @@ class App extends Component {
       searchActive: true,
     };
   }
+
   render() {
     return (
       <div className="App" style={{ height: "100%" }}>
