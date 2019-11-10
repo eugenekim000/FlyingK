@@ -11,6 +11,9 @@ import "../css/Map.css";
 
 const MyMap = withGoogleMap((props) => (
   <GoogleMap
+    // defaultOptions={{
+    //   scrollwheel: false,
+    // }}
     className="googleMap"
     ref={props.onMapLoad}
     defaultZoom={4}
@@ -88,9 +91,10 @@ class Map extends Component {
           containerElement={<div className="mapContainer" />}
           mapElement={
             <div
-              style={{ height: `100%`, width: `100%`, "border-radius": "5px" }}
+              style={{ height: `100%`, width: `100%`, borderRadius: "5px" }}
             />
           }
+          scrollwheel={false}
           markers={this.props.locations}
           getByState={this.props.getByState}
           position={this.state.position}
