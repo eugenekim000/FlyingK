@@ -1,10 +1,11 @@
 import axios from "axios";
-// import locations from "../data/truckStopData";
+import locations from "../data/truckStopData";
 
 export async function getMarkers() {
   const { data: locations } = await axios.get(
     "https://ccx-truckstop.herokuapp.com/api/locations"
   ); // ES6 destructuring & aliasing
+
   const markers = locations.map((l) => ({
     position: {
       lat: l.latitude,
